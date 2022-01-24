@@ -5,6 +5,7 @@
 #define CUBILIGHTSTUDIO_APPLICATION_H
 
 #include "Log.h"
+#include "Window.h"
 
 namespace CubiLight {
     class Application {
@@ -12,8 +13,13 @@ namespace CubiLight {
         Application();
         ~Application();
         void Run();
+        void Close();
+        static Application& Get()  { return *instance; };
     private:
         Log *logger;
+        Window *window;
+        static Application *instance;
+        bool running;
     };
 }
 

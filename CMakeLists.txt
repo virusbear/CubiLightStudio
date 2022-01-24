@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.21)
 project(CubiLightStudio)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 file(GLOB sources src/*.*)
 
@@ -23,3 +23,5 @@ target_link_libraries(CubiLightStudio imgui)
 
 add_subdirectory(vendor/spdlog)
 target_link_libraries(CubiLightStudio spdlog)
+
+#target_link_libraries(CubiLightStudio imgui_node_editor)
