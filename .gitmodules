@@ -7,6 +7,6 @@
 [submodule "vendor/spdlog"]
 	path = vendor/spdlog
 	url = https://github.com/gabime/spdlog
-[submodule "vendor/imgui-node-editor"]
-	path = vendor/imgui-node-editor
-	url = https://github.com/thedmd/imgui-node-editor.git
+[submodule "vendor/imnodes"]
+	path = vendor/imnodes
+	url = https://github.com/Nelarius/imnodes.git

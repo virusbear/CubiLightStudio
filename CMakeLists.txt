@@ -2,11 +2,14 @@ cmake_minimum_required(VERSION 3.21)
 project(CubiLightStudio)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static")
+#-Wl,-subsystem,windows
 
 file(GLOB sources src/*.*)
+file(GLOB headers include/*.*)
 
-add_executable(CubiLightStudio ${sources})
-target_include_directories(CubiLightStudio PRIVATE src)
+add_executable(CubiLightStudio ${sources} ${headers})
+target_include_directories(CubiLightStudio PRIVATE include)
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
@@ -23,5 +26,3 @@ target_link_libraries(CubiLightStudio imgui)
 
 add_subdirectory(vendor/spdlog)
 target_link_libraries(CubiLightStudio spdlog)
-
-#target_link_libraries(CubiLightStudio imgui_node_editor)

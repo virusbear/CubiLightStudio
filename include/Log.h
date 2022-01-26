@@ -6,8 +6,8 @@
 #define CUBILIGHTSTUDIO_LOG_H
 
 #include <string>
-#include <spdlog/spdlog.h>
-#include <spdlog/sinks/stdout_color_sinks.h>
+#include "spdlog/spdlog.h"
+#include "spdlog/sinks/stdout_color_sinks.h"
 
 namespace CubiLight {
     class Log {
@@ -21,7 +21,7 @@ namespace CubiLight {
         void Error(const std::string &msg);
         void Fatal(const std::string &msg);
     private:
-        std::shared_ptr<spdlog::logger> logger;
+        std::shared_ptr<spdlog::logger> m_logger;
     };
 }
 

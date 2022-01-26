@@ -1,39 +1,35 @@
 //
-// Created by Virusbear on 23.01.2022.
+// Created by Virusbear on 26.01.2022.
 //
 
 #include "Application.h"
+#include "ImGuiDemoPanel.h"
 
 #include <thread>
 
 namespace CubiLight {
-    Application *Application::instance = nullptr;
-
     Application::Application() {
-        logger = new Log("Application");
-        WindowOpts opts = WindowOpts{};
-        window = Window::Create(opts);
+        m_window = Window::Create(WindowOpts{
+            .Title = "CubiLight Studio",
+            .Width = 1600,
+            .Height = 900,
+            .VsyncEnabled = true
+        });
 
-        instance = this;
+        m_uiManager = new UIManager(m_window);
+        m_uiManager->AddWindow(new ImGuiDemoPanel());
     }
 
     Application::~Application() {
-
-    }
-
-    void Application::Close() {
-        running = false;
+        delete m_uiManager;
+        delete m_window;
     }
 
     void Application::Run() {
-        logger->Trace("Running Application");
-
-        running = true;
-
-        while(running) {
-            window->OnUpdate();
+        while(m_window->IsOpen()) {
+            m_uiManager->Update();
+            m_uiManager->Render();
+            m_window->Update();
         }
-
-        window->OnClose();
     }
 }

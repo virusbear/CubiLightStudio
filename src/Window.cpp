@@ -1,12 +1,18 @@
 //
-// Created by Virusbear on 24.01.2022.
+// Created by Virusbear on 26.01.2022.
 //
 
 #include "Window.h"
-#include "GlfwWindow.h"
+
+#include "OpenGLWindow.h"
 
 namespace CubiLight {
-    Window *Window::Create(const WindowOpts& opts) {
-        return new GlfwWindow(opts);
+    Window *Window::Create(WindowOpts opts) {
+#ifdef CL_VULKAN
+        //TODO: Create vulkan window
+        return nullptr;
+#else
+        return new OpenGLWindow(opts);
+#endif
     }
 }

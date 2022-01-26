@@ -1,11 +1,12 @@
 //
-// Created by Virusbear on 23.01.2022.
+// Created by Virusbear on 26.01.2022.
 //
+
 #ifndef CUBILIGHTSTUDIO_APPLICATION_H
 #define CUBILIGHTSTUDIO_APPLICATION_H
 
-#include "Log.h"
 #include "Window.h"
+#include "UIManager.h"
 
 namespace CubiLight {
     class Application {
@@ -13,14 +14,9 @@ namespace CubiLight {
         Application();
         ~Application();
         void Run();
-        void Close();
-        static Application& Get()  { return *instance; };
     private:
-        Log *logger;
-        Window *window;
-        static Application *instance;
-        bool running;
+        Window *m_window;
+        UIManager *m_uiManager;
     };
 }
-
 #endif //CUBILIGHTSTUDIO_APPLICATION_H
