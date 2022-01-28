@@ -5,7 +5,18 @@
 #include "Panel.h"
 
 namespace CubiLight {
-    bool Panel::Begin(std::string& name) {
+    Panel::Panel(const std::string name): m_name(name) {}
+
+    void Panel::Update() {
+        if(m_show) {
+            if(Begin(m_name)) {
+                Render();
+                End();
+            }
+        }
+    }
+
+    bool Panel::Begin(const std::string& name) {
         return ImGui::Begin(name.c_str(), &m_show);
     }
 

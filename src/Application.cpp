@@ -3,7 +3,7 @@
 //
 
 #include "Application.h"
-#include "ImGuiDemoPanel.h"
+#include "NodeEditor/NodeEditorPanel.h"
 
 #include <thread>
 
@@ -17,7 +17,7 @@ namespace CubiLight {
         });
 
         m_uiManager = new UIManager(m_window);
-        m_uiManager->AddWindow(new ImGuiDemoPanel());
+        m_uiManager->AddWindow(new NodeEditorPanel("Node Editor"));
     }
 
     Application::~Application() {

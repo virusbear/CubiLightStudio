@@ -8,5 +8,4 @@
 	path = vendor/spdlog
 	url = https://github.com/gabime/spdlog
 [submodule "vendor/imnodes"]
-	path = vendor/imnodes
 	url = https://github.com/Nelarius/imnodes.git

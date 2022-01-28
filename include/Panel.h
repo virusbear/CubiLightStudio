@@ -19,13 +19,18 @@
 namespace CubiLight {
     class Panel {
     public:
-        Panel() = default;
+        explicit Panel(const std::string name);
         virtual ~Panel() = default;
-        virtual void Update() = 0;
+        void Update();
+
+    protected:
+        virtual void Render() = 0;
+
     private:
-        virtual bool Begin(std::string& name);
+        bool Begin(const std::string& name);
         void End();
         bool m_show = true;
+        const std::string m_name;
     };
 }
 
