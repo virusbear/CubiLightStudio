@@ -2,17 +2,17 @@
 // Created by Virusbear on 29.01.2022.
 //
 
-#ifndef CUBILIGHTSTUDIO_IVEC2PORTDATA_H
-#define CUBILIGHTSTUDIO_IVEC2PORTDATA_H
+#ifndef CUBILIGHTSTUDIO_IVEC3PORTDATA_H
+#define CUBILIGHTSTUDIO_IVEC3PORTDATA_H
 
 #include <string>
 #include "NodeEditor/PortData.h"
 #include "Math/IVec2.h"
 
 namespace CubiLight {
-    struct IVec2PortData: public PortData {
-        IVec2PortData();
-        IVec2 value;
+    struct IVec3PortData: public PortData {
+        IVec3PortData();
+        IVec3 value;
         int min;
         int max;
 
@@ -23,4 +23,4 @@ namespace CubiLight {
     };
 }
 
-#endif //CUBILIGHTSTUDIO_IVEC2PORTDATA_H
+#endif //CUBILIGHTSTUDIO_IVEC3PORTDATA_H

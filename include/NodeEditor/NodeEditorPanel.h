@@ -8,7 +8,7 @@
 #include "Panel.h"
 #include "imnodes.h"
 #include "NodeEditor/Node.h"
-#include <vector>
+#include <unordered_map>
 #include <string>
 
 namespace CubiLight {
@@ -18,11 +18,13 @@ namespace CubiLight {
         ~NodeEditorPanel() override;
         void Render() override;
     private:
-        void SetNodePortStyle();
         void RenderNewNodePopup();
+        void CreateNewLinks();
+        void Evaluate();
     private:
         ImNodesContext *m_context;
-        std::vector<Node *> m_nodes;
+        std::unordered_map<int, Node *> m_nodes;
+        std::unordered_map<int, std::pair<Port *, Port *>> m_links;
     };
 }
 

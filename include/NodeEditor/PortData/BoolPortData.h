@@ -5,6 +5,7 @@
 #ifndef CUBILIGHTSTUDIO_BOOLPORTDATA_H
 #define CUBILIGHTSTUDIO_BOOLPORTDATA_H
 
+#include <string>
 #include "NodeEditor/PortData.h"
 
 namespace CubiLight {
@@ -13,6 +14,9 @@ namespace CubiLight {
         bool value;
 
         void Render() override;
+        std::string GetType() override;
+        Color GetPortColor() override;
+        PortShape GetPortShape() override;
     };
 }
 

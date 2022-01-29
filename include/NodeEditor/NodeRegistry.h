@@ -17,7 +17,7 @@ namespace CubiLight {
 
     class NodeRegistry {
     public:
-        static void Register(const std::string name, NodeFactory factory) {
+        static void Register(const std::string name, NodeFactory factory) noexcept {
             m_definitions[name] = factory;
         }
         static Node *Create(const std::string name) {

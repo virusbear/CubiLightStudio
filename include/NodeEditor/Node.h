@@ -5,10 +5,12 @@
 #ifndef CUBILIGHTSTUDIO_NODE_H
 #define CUBILIGHTSTUDIO_NODE_H
 
-#include <vector>
+#include <unordered_map>
 #include <string>
+#include <vector>
 #include "NodeEditor/Port.h"
 #include "NodeEditor/IdStorage.h"
+#include "NodeEditor/Link.h"
 
 namespace CubiLight {
     class Node {
@@ -18,6 +20,7 @@ namespace CubiLight {
         void Update();
         virtual void Evaluate() = 0;
         int GetId() const { return m_id; };
+        std::vector<Port *> GetInputs();
     protected:
         template<PortDirection Dir, typename Type>
         Type& ConfigPort(const std::string name) {

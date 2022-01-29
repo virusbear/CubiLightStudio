@@ -12,12 +12,13 @@ namespace CubiLight {
     class FloatNode: public Node {
     public:
         FloatNode(const std::string name, int id);
-        void Evaluate() override {}
+        void Evaluate() override;
         static Node *Create(const std::string name, int id);
 
         void SetMin(float min);
         void SetMax(float max);
     private:
+        FloatPortData& m_input;
         FloatPortData& m_output;
     };
 }

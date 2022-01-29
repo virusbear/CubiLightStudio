@@ -26,4 +26,16 @@ namespace CubiLight {
 
         ImNodes::EndNode();
     }
+
+    std::vector<Port *> Node::GetInputs() {
+        std::vector<Port *> inputs;
+
+        for(auto port : m_ports) {
+            if(port->GetDirection() == Input) {
+                inputs.push_back(port);
+            }
+        }
+
+        return inputs;
+    }
 }

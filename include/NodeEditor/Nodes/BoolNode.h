@@ -5,7 +5,6 @@
 #ifndef CUBILIGHTSTUDIO_BOOLNODE_H
 #define CUBILIGHTSTUDIO_BOOLNODE_H
 
-#include "StaticBlock.h"
 #include "NodeEditor/NodeRegistry.h"
 #include "NodeEditor/Node.h"
 #include <imgui.h>
@@ -16,11 +15,12 @@ namespace CubiLight {
     public:
         BoolNode(const std::string name, int id);
 
-        void Evaluate() override {}
+        void Evaluate() override;
 
         static Node *Create(const std::string name, int id);
     private:
         BoolPortData& m_output;
+        BoolPortData& m_input;
     };
 }
 

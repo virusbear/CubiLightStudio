@@ -5,6 +5,8 @@
 #include "Math/IVec3.h"
 
 namespace CubiLight {
+    const IVec3 IVec3::Zero = IVec3();
+
     IVec3::IVec3() {
         x = y = z = 0;
     }

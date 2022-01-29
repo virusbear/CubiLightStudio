@@ -9,4 +9,16 @@ namespace CubiLight {
         ImGui::SetNextItemWidth(150.0f);
         ImGui::DragInt("##hidden", &value, 0.2f, min, max);
     }
+
+    std::string IntPortData::GetType() {
+        return "CubiLight::IntPortData";
+    }
+
+    Color IntPortData::GetPortColor() {
+        return {53, 150, 250, 180};
+    }
+
+    PortShape IntPortData::GetPortShape() {
+        return PortShape::CircleFilled;
+    }
 }

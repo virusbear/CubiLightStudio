@@ -12,4 +12,16 @@ namespace CubiLight {
         ImGui::DragInt("Y", &(value.x), 0.2f, min, max);
         ImGui::DragInt("X", &(value.y), 0.2f, min, max);
     }
+
+    std::string IVec2PortData::GetType() {
+        return "CubiLight::IVec2PortData";
+    }
+
+    Color IVec2PortData::GetPortColor() {
+        return {53, 150, 250, 180};
+    }
+
+    PortShape IVec2PortData::GetPortShape() {
+        return PortShape::CircleFilled;
+    }
 }

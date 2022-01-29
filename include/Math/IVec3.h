@@ -18,6 +18,8 @@ namespace CubiLight {
         int x;
         int y;
         int z;
+
+        static const IVec3 Zero;
     };
 }
 

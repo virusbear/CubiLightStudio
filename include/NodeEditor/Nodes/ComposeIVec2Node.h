@@ -13,7 +13,7 @@ namespace CubiLight {
     class ComposeIVec2Node: public Node {
     public:
         ComposeIVec2Node(const std::string name, int id);
-        void Evaluate() override {}
+        void Evaluate() override;
         static Node *Create(const std::string name, int id);
     private:
         IntPortData& m_x;

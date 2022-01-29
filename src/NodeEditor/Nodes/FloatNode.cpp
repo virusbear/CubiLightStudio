@@ -3,15 +3,10 @@
 //
 
 #include "NodeEditor/Nodes/FloatNode.h"
-#include "NodeEditor/NodeRegistry.h"
-#include "StaticBlock.h"
 
 namespace CubiLight {
-    static_block {
-        NodeRegistry::Register("Float", FloatNode::Create);
-    }
-
     FloatNode::FloatNode(const std::string name, int id): Node(name, id),
+        m_input(ConfigPort<Input, FloatPortData>("Input")),
         m_output(ConfigPort<Output, FloatPortData>("Output")) {
 
         m_output.min = 0;
@@ -28,5 +23,11 @@ namespace CubiLight {
 
     Node *FloatNode::Create(const std::string name, int id) {
         return new FloatNode(name, id);
+    }
+
+    void FloatNode::Evaluate() {
+        m_input.PullData();
+
+        m_output.value = m_input.value;
     }
 }

@@ -5,14 +5,17 @@
 #include "NodeEditor/Nodes/BoolNode.h"
 
 namespace CubiLight {
-    static_block {
-        NodeRegistry::Register("Boolean", BoolNode::Create);
-    }
-
     BoolNode::BoolNode(const std::string name, int id): Node(name, id),
-        m_output(ConfigPort<PortDirection::Output, BoolPortData>("Output")) {}
+        m_input(ConfigPort<Input, BoolPortData>("Input")),
+        m_output(ConfigPort<Output, BoolPortData>("Output")) {}
 
     Node *BoolNode::Create(const std::string name, int id) {
         return new BoolNode(name, id);
+    }
+
+    void BoolNode::Evaluate() {
+        m_input.PullData();
+
+        m_output.value = m_input.value;
     }
 }

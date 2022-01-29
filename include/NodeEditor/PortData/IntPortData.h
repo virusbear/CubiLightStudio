@@ -5,6 +5,7 @@
 #ifndef CUBILIGHTSTUDIO_INTPORTDATA_H
 #define CUBILIGHTSTUDIO_INTPORTDATA_H
 
+#include <string>
 #include "NodeEditor/PortData.h"
 
 namespace CubiLight {
@@ -15,6 +16,9 @@ namespace CubiLight {
         int max;
 
         void Render() override;
+        std::string GetType() override;
+        Color GetPortColor() override;
+        PortShape GetPortShape() override;
     };
 }
 
