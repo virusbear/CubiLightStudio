@@ -7,7 +7,7 @@
 
 #include <vector>
 #include <string>
-#include "Port.h"
+#include "NodeEditor/Port.h"
 #include "NodeEditor/IdStorage.h"
 
 namespace CubiLight {

@@ -6,7 +6,7 @@
 #define CUBILIGHTSTUDIO_PORT_H
 
 #include <string>
-#include "PortData.h"
+#include "NodeEditor/PortData.h"
 
 namespace CubiLight {
     enum PortDirection {

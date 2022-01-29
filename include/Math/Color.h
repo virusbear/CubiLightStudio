@@ -1,0 +1,8 @@
+//
+// Created by Virusbear on 29.01.2022.
+//
+
+#ifndef CUBILIGHTSTUDIO_COLOR_H
+#define CUBILIGHTSTUDIO_COLOR_H
+
+#endif //CUBILIGHTSTUDIO_COLOR_H

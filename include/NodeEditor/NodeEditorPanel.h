@@ -9,6 +9,7 @@
 #include "imnodes.h"
 #include "NodeEditor/Node.h"
 #include <vector>
+#include <string>
 
 namespace CubiLight {
     class NodeEditorPanel: public Panel {

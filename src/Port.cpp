@@ -23,9 +23,13 @@ namespace CubiLight {
         if(m_dir == PortDirection::Input) {
             ImGui::TextUnformatted(m_name.c_str());
             ImGui::SameLine();
-            m_data.Render();
+            if(m_data.show) {
+                m_data.Render();
+            }
         } else {
-            m_data.Render();
+            if(m_data.show) {
+                m_data.Render();
+            }
             ImGui::SameLine();
             ImGui::TextUnformatted(m_name.c_str());
         }

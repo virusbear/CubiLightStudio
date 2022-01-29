@@ -18,68 +18,17 @@ namespace CubiLight {
 
     class IdStorage {
     public:
-        static int NewNodeId(ImNodesContext *ctx = ImNodes::GetCurrentContext()) {
-            return NewIdInPool(GetPoolForContext(ctx)->NodeIds);
-        }
-
-        static int NewPortId(ImNodesContext *ctx = ImNodes::GetCurrentContext()) {
-            return NewIdInPool(GetPoolForContext(ctx)->PortIds);
-        }
-        static int NewLinkId(ImNodesContext *ctx = ImNodes::GetCurrentContext()) {
-            return NewIdInPool(GetPoolForContext(ctx)->LinkIds);
-        }
-
-        static void FreeNodeId(int id, ImNodesContext *ctx = ImNodes::GetCurrentContext()) {
-            FreeIdInPool(id, GetPoolForContext(ctx)->NodeIds);
-        }
-        static void FreePortId(int id, ImNodesContext *ctx = ImNodes::GetCurrentContext()) {
-            FreeIdInPool(id, GetPoolForContext(ctx)->PortIds);
-        }
-        static void FreeLinkId(int id, ImNodesContext *ctx = ImNodes::GetCurrentContext()) {
-            FreeIdInPool(id, GetPoolForContext(ctx)->LinkIds);
-        }
-
-        static void FreeContext(ImNodesContext *ctx = ImNodes::GetCurrentContext()) {
-            delete GetPoolForContext(ctx);
-
-            m_storage.erase(ctx);
-        }
+        static int NewNodeId(ImNodesContext *ctx = ImNodes::GetCurrentContext());
+        static int NewPortId(ImNodesContext *ctx = ImNodes::GetCurrentContext());
+        static int NewLinkId(ImNodesContext *ctx = ImNodes::GetCurrentContext());
+        static void FreeNodeId(int id, ImNodesContext *ctx = ImNodes::GetCurrentContext());
+        static void FreePortId(int id, ImNodesContext *ctx = ImNodes::GetCurrentContext());
+        static void FreeLinkId(int id, ImNodesContext *ctx = ImNodes::GetCurrentContext());
+        static void FreeContext(ImNodesContext *ctx = ImNodes::GetCurrentContext());
     private:
-        static int NewIdInPool(std::vector<bool>& pool) {
-            auto idx = std::find(pool.begin(), pool.end(), false);
-
-            if(idx == pool.end()) {
-                pool.push_back(true);
-                return (int) (pool.end() - pool.begin() -1);
-            }
-
-            *idx = true;
-            return (int) (idx - pool.begin());
-        }
-
-        static void FreeIdInPool(int id, std::vector<bool>& pool) {
-            auto idx = pool.begin() + id;
-
-            if(idx == pool.end() - 1) {
-                pool.erase(idx);
-            }
-
-            if(idx >= pool.begin() && idx < pool.end()) {
-                *idx = false;
-            }
-        }
-
-        static IdPool *GetPoolForContext(ImNodesContext *ctx) {
-            IdPool *pool;
-            if(m_storage.find(ctx) == m_storage.end()) {
-                pool = new IdPool;
-                m_storage[ctx] = pool;
-            } else {
-                pool = m_storage[ctx];
-            }
-
-            return pool;
-        }
+        static int NewIdInPool(std::vector<bool>& pool);
+        static void FreeIdInPool(int id, std::vector<bool>& pool);
+        static IdPool *GetPoolForContext(ImNodesContext *ctx);
     private:
         static std::unordered_map<ImNodesContext *, IdPool *> m_storage;
     };

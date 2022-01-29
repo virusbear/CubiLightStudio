@@ -29,6 +29,10 @@ namespace CubiLight {
 
         RenderNewNodePopup();
 
+        for(auto node : m_nodes) {
+            node->Update();
+        }
+
         ImNodes::MiniMap(0.2f, ImNodesMiniMapLocation_TopRight);
         ImNodes::EndNodeEditor();
 

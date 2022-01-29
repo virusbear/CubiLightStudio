@@ -8,7 +8,7 @@ set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static")
 file(GLOB sources src/*.*)
 file(GLOB headers include/*.*)
 
-add_executable(CubiLightStudio vendor/imnodes/imnodes_internal.h vendor/imnodes/imnodes.h vendor/imnodes/imnodes.cpp ${sources} ${headers} src/NodeRegistry.cpp src/IdStorage.cpp src/BoolNode.cpp)
+add_executable(CubiLightStudio vendor/imnodes/imnodes_internal.h vendor/imnodes/imnodes.h vendor/imnodes/imnodes.cpp ${sources} ${headers})
 target_include_directories(CubiLightStudio PRIVATE include vendor/imnodes)
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
