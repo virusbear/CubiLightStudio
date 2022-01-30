@@ -2,7 +2,7 @@
 // Created by Virusbear on 29.01.2022.
 //
 
-#include "NodeTemp/NodeRegistry.h"
+#include "NodeEditor/NodeRegistry.h"
 #include <unordered_map>
 #include <cassert>
 

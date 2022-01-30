@@ -2,7 +2,7 @@
 // Created by Virusbear on 29.01.2022.
 //
 
-#include "NodeTemp/Node.h"
+#include "NodeEditor/Node.h"
 
 namespace CubiLight {
     Node::Node(Type *type, const std::string name): m_type(type), m_name(name) {}

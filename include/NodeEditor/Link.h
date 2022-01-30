@@ -9,6 +9,7 @@
 
 namespace CubiLight {
     struct Link {
+        Link(Port& start, Port& end): start(start), end(end) {}
         const Port& start;
         const Port& end;
     };

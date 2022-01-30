@@ -20,7 +20,7 @@ namespace CubiLight {
         Link *AddLink(Port *start, Port *end);
         void RemoveLink(Link *link);
 
-        void Evaluate();
+        //TODO: void Evaluate();
     private:
         std::vector<Node *> m_nodes;
         std::vector<Link *> m_links;
