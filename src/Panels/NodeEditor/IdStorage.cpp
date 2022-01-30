@@ -2,7 +2,7 @@
 // Created by Virusbear on 28.01.2022.
 //
 
-#include "NodeEditor/IdStorage.h"
+#include "Panels/NodeEditor/IdStorage.h"
 #include <algorithm>
 
 namespace CubiLight {

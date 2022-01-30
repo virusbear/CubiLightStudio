@@ -7,7 +7,7 @@
 
 #include <vector>
 #include <unordered_map>
-#include <imnodes.h>
+#include "imnodes.h"
 
 namespace CubiLight {
     struct IdPool {
