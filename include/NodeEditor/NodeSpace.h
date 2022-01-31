@@ -20,6 +20,8 @@ namespace CubiLight {
         Link *AddLink(Port *start, Port *end);
         void RemoveLink(Link *link);
 
+        bool IsConnected(Port *port);
+
         std::vector<Node *> GetNodes() const { return m_nodes; }
         std::vector<Link *> GetLinks() const { return m_links; }
 

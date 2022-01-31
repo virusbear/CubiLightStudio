@@ -6,12 +6,12 @@
 #define CUBILIGHTSTUDIO_PORTDATA_H
 
 #include <string>
+#include "NodeEditor/Type.h"
 
 namespace CubiLight {
     class PortData {
     public:
         virtual ~PortData() = default;
-        virtual std::string GetType() = 0;
     };
 }
 

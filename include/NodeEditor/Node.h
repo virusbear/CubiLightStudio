@@ -17,16 +17,16 @@ namespace CubiLight {
         virtual ~Node();
         virtual void Evaluate() = 0;
         std::vector<Port *> GetPorts() const { return m_ports; }
-        virtual Type *GetType() = 0;
-
+        Type *GetType() const { return m_type; }
+        std::string GetName() const { return m_name; }
     protected:
         template<PortDirection Dir, class T>
         T& ConfigPort(const std::string name) {
-            auto port = new Port(Dir, name, new T());
+            auto port = new Port(Dir, T::GetType(), name, new T());
 
             m_ports.push_back(port);
 
-            return port->GetData();
+            return (T&) port->GetData();
         }
 
     private:

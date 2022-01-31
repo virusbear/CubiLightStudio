@@ -5,6 +5,8 @@
 #include "Simulation.h"
 
 namespace CubiLight {
+    Simulation *Simulation::m_instance;
+
     Simulation::Simulation() {
         m_nodespace = new NodeSpace();
     }

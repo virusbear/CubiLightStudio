@@ -79,7 +79,16 @@ namespace CubiLight {
         delete link;
     }
 
+    bool NodeSpace::IsConnected(Port *port) {
+        return std::any_of(
+            m_links.begin(),
+            m_links.end(),
+            [port](Link *link) {
+                return &(link->start) == port || &(link->end) == port;
+            }
+        );
+    }
+
     //TODO: Add PortData implementations
     //TODO: Add Node Implementations
-    //TODO: How to render?
 }

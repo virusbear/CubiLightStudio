@@ -11,12 +11,13 @@
 #include <unordered_map>
 
 namespace CubiLight {
-    typedef Node *(*NodeFactory)(const std::string name);
+    typedef Node *(*NodeFactory)(Type *type, const std::string name);
 
     class NodeRegistry {
     public:
         static void Register(Type *type, NodeFactory factory) noexcept;
         static Node *Create(Type *type);
+        static std::vector<Type *> GetRegisteredTypes();
     private:
         static std::unordered_map<Type *, NodeFactory> m_registrations;
     };

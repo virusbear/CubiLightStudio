@@ -22,6 +22,7 @@ namespace CubiLight {
         PortDirection GetDirection() const { return m_dir; }
         PortData& GetData() const { return *m_data; }
         Type *GetType() const { return m_type; }
+        std::string GetName() const { return m_name; }
     private:
         PortDirection m_dir;
         const std::string m_name;

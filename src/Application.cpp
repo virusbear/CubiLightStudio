@@ -3,7 +3,7 @@
 //
 
 #include "Application.h"
-#include "NodeEditor/NodeEditorPanel.h"
+#include "Panels/NodeEditor/NodeEditorPanel.h"
 
 #include <thread>
 

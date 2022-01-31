@@ -21,6 +21,16 @@ namespace CubiLight {
         }
 
         auto factory = m_registrations[type];
-        return factory(type->type);
+        return factory(type, type->type);
+    }
+
+    std::vector<Type *> NodeRegistry::GetRegisteredTypes() {
+        std::vector<Type *> types;
+
+        for(auto element : m_registrations) {
+            types.push_back(element.first);
+        }
+
+        return types;
     }
 }
