@@ -2,7 +2,7 @@
 // Created by Virusbear on 29.01.2022.
 //
 
-#include "Math/Color.h"
+#include "Color.h"
 
 namespace CubiLight {
     const Color Color::Black = Color();

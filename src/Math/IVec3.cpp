@@ -2,7 +2,7 @@
 // Created by Virusbear on 29.01.2022.
 //
 
-#include "Math/IVec3.h"
+#include "IVec3.h"
 
 namespace CubiLight {
     const IVec3 IVec3::Zero = IVec3();

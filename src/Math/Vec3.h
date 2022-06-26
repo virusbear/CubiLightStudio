@@ -1,9 +1,4 @@
-//
-// Created by Virusbear on 29.01.2022.
-//
-
-#ifndef CUBILIGHTSTUDIO_VEC3_H
-#define CUBILIGHTSTUDIO_VEC3_H
+#pragma once
 
 namespace CubiLight {
     struct Vec3 {
@@ -16,5 +11,3 @@ namespace CubiLight {
         float z;
     };
 }
-
-#endif //CUBILIGHTSTUDIO_VEC3_H

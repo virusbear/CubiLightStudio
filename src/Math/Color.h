@@ -1,9 +1,4 @@
-//
-// Created by Virusbear on 29.01.2022.
-//
-
-#ifndef CUBILIGHTSTUDIO_COLOR_H
-#define CUBILIGHTSTUDIO_COLOR_H
+#pragma once
 
 #include <algorithm>
 
@@ -36,5 +31,3 @@ namespace CubiLight {
         static const Color Transparent;
     };
 }
-
-#endif //CUBILIGHTSTUDIO_COLOR_H

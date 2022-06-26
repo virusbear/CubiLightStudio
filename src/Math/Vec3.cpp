@@ -2,7 +2,7 @@
 // Created by Virusbear on 29.01.2022.
 //
 
-#include "Math/Vec3.h"
+#include "Vec3.h"
 
 namespace CubiLight {
     Vec3::Vec3() {

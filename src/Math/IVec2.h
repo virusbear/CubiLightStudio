@@ -1,9 +1,4 @@
-//
-// Created by Virusbear on 29.01.2022.
-//
-
-#ifndef CUBILIGHTSTUDIO_IVEC2_H
-#define CUBILIGHTSTUDIO_IVEC2_H
+#pragma once
 
 #include "IVec3.h"
 #include "Vec2.h"
@@ -23,5 +18,3 @@ namespace CubiLight {
         static const IVec2 Zero;
     };
 }
-
-#endif //CUBILIGHTSTUDIO_IVEC2_H
