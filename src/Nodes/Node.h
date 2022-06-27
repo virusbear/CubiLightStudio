@@ -7,10 +7,10 @@
 
 namespace CubiLight {
     class Node {
-        public:
-            virtual std::string GetName();
-            virtual std::vector<Port *> GetPorts();
-            virtual void Evaluate();
+    public:
+        virtual std::string GetName();
+        virtual std::vector<Port *> GetPorts();
+        virtual void Evaluate();
     };
 }
 

@@ -15,7 +15,7 @@ namespace CubiLight {
     private:
         Graph<Node> graph;
     public:
-        void evaluate();
+        void Evaluate();
         void operator +=(Node& node);
         void operator -=(Node& node);
 

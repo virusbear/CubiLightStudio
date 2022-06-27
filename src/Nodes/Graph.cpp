@@ -47,13 +47,13 @@ namespace CubiLight {
     }
 
     template <typename V>
-    std::vector<V&> Graph<V>::topologicalSort() {
+    std::vector<V *> Graph<V>::topologicalSort() {
         std::vector<V&> result;
         std::unordered_set<V *> visited;
 
         for(auto adj: adjacency) {
             if(visited.find(&(adj.first)) == visited.end()) {
-                topologicalSort(adjacency, adj.first, visited, result);
+                topologicalSort0(adjacency, adj.first, visited, result);
             }
         }
 
@@ -70,6 +70,6 @@ namespace CubiLight {
             }
         }
 
-        result.push_back(*vertex);
+        result.push_back(vertex);
     }
 }

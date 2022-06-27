@@ -21,6 +21,6 @@ namespace CubiLight
             void link(V& start, V& end);
             void unlink(V& start, V& end);
 
-            std::vector<V&> topologicalSort();
+            std::vector<V *> topologicalSort();
     };
 }

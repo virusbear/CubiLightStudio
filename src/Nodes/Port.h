@@ -9,6 +9,8 @@
 #include "Node.h"
 
 namespace CubiLight {
+    class Node;
+
     enum PortDirection {
         Input,
         Output
@@ -22,8 +24,8 @@ namespace CubiLight {
     public:
         Port(std::string& name, PortDirection dir, Node& node): mName(name), mDir(dir), mNode(node) {}
 
-        virtual void LinkFrom(Port& other);
-        virtual void Unlink();
+        virtual void LinkFrom(Port& other) = 0;
+        virtual void Unlink() = 0;
 
         std::string& GetName() const { return mName; };
         PortDirection GetDir() const { return mDir; };
