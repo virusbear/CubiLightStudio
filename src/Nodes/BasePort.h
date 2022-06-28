@@ -14,7 +14,7 @@ namespace CubiLight {
         T *data;
         //TODO: Is this ok?
         //TODO: this assumes that setDefault will always be called before a port is used
-        T defaultValue = NULL;
+        T defaultValue;
     public:
         BasePort(std::string& name, PortDirection dir, Node& node): Port(name, dir, node) {}
         void SetDefault(T& value);
