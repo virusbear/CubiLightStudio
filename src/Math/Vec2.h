@@ -8,5 +8,7 @@ namespace CubiLight {
 
         float x;
         float y;
+
+        static const Vec2 Zero;
     };
 }

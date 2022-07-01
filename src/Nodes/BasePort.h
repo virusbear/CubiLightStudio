@@ -11,13 +11,12 @@ namespace CubiLight {
     template <typename T>
     class BasePort: Port {
     protected:
-        T *data;
+        T *mData;
         //TODO: Is this ok?
-        //TODO: this assumes that setDefault will always be called before a port is used
-        T defaultValue;
+        T mDefault;
     public:
         BasePort(std::string& name, PortDirection dir, Node& node): Port(name, dir, node) {}
-        void SetDefault(T& value);
+        void SetDefault(T value);
         void LinkFrom(Port &other) override;
         void Unlink() override;
         T& GetData();

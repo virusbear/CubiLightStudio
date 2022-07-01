@@ -5,6 +5,8 @@
 #include "Vec2.h"
 
 namespace CubiLight {
+    const Vec2 Vec2::Zero = Vec2();
+
     Vec2::Vec2() {
         x = y = 0.0f;
     }

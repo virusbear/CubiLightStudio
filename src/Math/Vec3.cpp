@@ -5,6 +5,8 @@
 #include "Vec3.h"
 
 namespace CubiLight {
+    const Vec3 Vec3::Zero = Vec3();
+
     Vec3::Vec3() {
         x = y = z = 0.0f;
     }

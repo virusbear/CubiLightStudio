@@ -6,8 +6,8 @@
 
 namespace CubiLight {
     template <typename T>
-    void BasePort<T>::SetDefault(T& value) {
-        defaultValue = value;
+    void BasePort<T>::SetDefault(T value) {
+        mDefault = value;
     }
 
     template <typename T>
@@ -18,20 +18,20 @@ namespace CubiLight {
             return;
         }
 
-        data = port->data;
+        mData = port->data;
     }
 
     template <typename T>
     void BasePort<T>::Unlink() {
-        data = nullptr;
+        mData = nullptr;
     }
 
     template <typename T>
     T& BasePort<T>::GetData() {
-        if(data == nullptr) {
-            return defaultValue;
+        if(mData == nullptr) {
+            return mDefault;
         } else {
-            return *data;
+            return *mData;
         }
     }
 }
