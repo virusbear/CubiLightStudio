@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 file(GLOB_RECURSE sources src/*.*)
 
-add_executable(CubiLightStudio ${sources} src/Nodes/BasePort.cpp src/Nodes/PrimitivePorts.h src/Nodes/StructPorts.h)
+add_executable(CubiLightStudio ${sources} src/Nodes/BasePort.cpp src/Nodes/PrimitivePorts.h src/Nodes/StructPorts.h src/Nodes/ValueNodes.h src/Nodes/VectorNodes.h src/Nodes/MathNodes.h src/Nodes/ConvertNodes.h src/Nodes/ConstantNodes.h src/Nodes/LogicNodes.h)
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)

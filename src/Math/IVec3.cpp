@@ -3,6 +3,7 @@
 //
 
 #include "IVec3.h"
+#include <cstdint>
 
 namespace CubiLight {
     const IVec3 IVec3::Zero = IVec3();
@@ -11,7 +12,7 @@ namespace CubiLight {
         x = y = z = 0;
     }
 
-    IVec3::IVec3(int _x, int _y, int _z) {
+    IVec3::IVec3(int32_t _x, int32_t _y, int32_t _z) {
         x = _x;
         y = _y;
         z = _z;

@@ -10,70 +10,56 @@
 namespace CubiLight {
     //TODO: Optimize port definition as this is kind of repetitive
 
-    class BoolPort: BasePort<bool> {
-        BoolPort(std::string& name, PortDirection dir, Node& node): BasePort<bool>(name, dir, node) {
-            SetDefault(false);
-        }
+    struct VoidPort: public BasePort<void *> {
+        VoidPort(std::string& name, PortDirection dir, Node& node): BasePort<void *>(name, dir, node, nullptr) {}
     };
 
-    class UBytePort: BasePort<uint8_t> {
-        UBytePort(std::string& name, PortDirection dir, Node& node): BasePort<uint8_t>(name, dir, node) {
-            SetDefault(0);
-        }
+    struct BoolPort: public BasePort<bool> {
+        BoolPort(std::string& name, PortDirection dir, Node& node): BasePort<bool>(name, dir, node, false) {}
     };
 
-    class UShortPort: BasePort<uint16_t> {
-        UShortPort(std::string& name, PortDirection dir, Node& node): BasePort<uint16_t>(name, dir, node) {
-            SetDefault(0);
-        }
+    struct UBytePort: public BasePort<uint8_t> {
+        UBytePort(std::string& name, PortDirection dir, Node& node): BasePort<uint8_t>(name, dir, node, 0) {}
     };
 
-    class UIntPort: BasePort<uint32_t> {
-        UIntPort(std::string& name, PortDirection dir, Node& node): BasePort<uint32_t>(name, dir, node) {
-            SetDefault(0);
-        }
+    struct UShortPort: public BasePort<uint16_t> {
+        UShortPort(std::string& name, PortDirection dir, Node& node): BasePort<uint16_t>(name, dir, node, 0) {}
     };
 
-    class ULongPort: BasePort<uint64_t> {
-        ULongPort(std::string& name, PortDirection dir, Node& node): BasePort<uint64_t>(name, dir, node) {
-            SetDefault(0);
-        }
+    struct UIntPort: public BasePort<uint32_t> {
+        UIntPort(std::string& name, PortDirection dir, Node& node): BasePort<uint32_t>(name, dir, node, 0) {}
     };
 
-    class BytePort: BasePort<int8_t> {
-        BytePort(std::string& name, PortDirection dir, Node& node): BasePort<int8_t>(name, dir, node) {
-            SetDefault(0);
-        }
+    struct ULongPort: public BasePort<uint64_t> {
+        ULongPort(std::string& name, PortDirection dir, Node& node): BasePort<uint64_t>(name, dir, node, 0) {}
     };
 
-    class ShortPort: BasePort<int16_t> {
-        ShortPort(std::string& name, PortDirection dir, Node& node): BasePort<int16_t>(name, dir, node) {
-            SetDefault(0);
-        }
+    struct BytePort: public BasePort<int8_t> {
+        BytePort(std::string& name, PortDirection dir, Node& node): BasePort<int8_t>(name, dir, node, 0) {}
     };
 
-    class IntPort: BasePort<int32_t> {
-        IntPort(std::string& name, PortDirection dir, Node& node): BasePort<int32_t>(name, dir, node) {
-            SetDefault(0);
-        }
+    struct ShortPort: public BasePort<int16_t> {
+        ShortPort(std::string& name, PortDirection dir, Node& node): BasePort<int16_t>(name, dir, node, 0) {}
     };
 
-    class LongPort: BasePort<int64_t> {
-        LongPort(std::string& name, PortDirection dir, Node& node): BasePort<int64_t>(name, dir, node) {
-            SetDefault(0);
-        }
+    struct IntPort: public BasePort<int32_t> {
+        IntPort(std::string& name, PortDirection dir, Node& node): BasePort<int32_t>(name, dir, node, 0) {}
     };
 
-    class FloatPort: BasePort<float> {
-        FloatPort(std::string& name, PortDirection dir, Node& node): BasePort<float>(name, dir, node) {
-            SetDefault(0.0f);
-        }
+    struct LongPort: public BasePort<int64_t> {
+        LongPort(std::string& name, PortDirection dir, Node& node): BasePort<int64_t>(name, dir, node, 0) {}
     };
 
-    class DoublePort: BasePort<double> {
-        DoublePort(std::string& name, PortDirection dir, Node& node): BasePort<double>(name, dir, node) {
-            SetDefault(0.0f);
-        }
+    struct FloatPort: public BasePort<float> {
+        FloatPort(std::string& name, PortDirection dir, Node& node): BasePort<float>(name, dir, node, 0.0f) {}
+    };
+
+    struct DoublePort: public BasePort<double> {
+        DoublePort(std::string& name, PortDirection dir, Node& node): BasePort<double>(name, dir, node, 0.0) {}
+    };
+
+    struct StringPort: public BasePort<std::string> {
+        StringPort(std::string& name, PortDirection dir, Node& node): BasePort<std::string>(name, dir, node, "") {}
     };
 }
 

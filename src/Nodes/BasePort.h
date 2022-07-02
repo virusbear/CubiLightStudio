@@ -6,20 +6,21 @@
 #define CUBILIGHTSTUDIO_BASEPORT_H
 
 #include "Port.h"
+#include "../Math/IVec2.h"
 
 namespace CubiLight {
     template <typename T>
-    class BasePort: Port {
+    class BasePort: public Port {
     protected:
         T *mData;
         //TODO: Is this ok?
         T mDefault;
     public:
-        BasePort(std::string& name, PortDirection dir, Node& node): Port(name, dir, node) {}
-        void SetDefault(T value);
+        BasePort(std::string& name, PortDirection dir, Node& node, T defaultValue): Port(name, dir, node), mDefault(defaultValue) {}
+        void SetData(T value);
         void LinkFrom(Port &other) override;
         void Unlink() override;
-        T& GetData();
+        const T& GetData();
     };
 }
 
